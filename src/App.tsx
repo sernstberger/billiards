@@ -1,11 +1,12 @@
-import { Suspense } from "react";
-import { Canvas } from "@react-three/fiber";
+import { ARButton, Controllers, Hands, VRButton, XR } from "@react-three/xr";
 import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
-import Ball from "./components/Ball";
-import PoolTable from "./components/PoolTable";
+
 import Background from "./components/Background";
+import Ball from "./components/Ball";
+import { Canvas } from "@react-three/fiber";
+import PoolTable from "./components/PoolTable";
+import { Suspense } from "react";
 const exrUrl = new URL("../public/country_club_4k.exr", import.meta.url).href;
-import { VRButton, ARButton, XR, Controllers, Hands } from "@react-three/xr";
 
 const App = () => {
   return (

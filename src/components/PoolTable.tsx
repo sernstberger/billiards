@@ -1,5 +1,7 @@
 import { Box } from "@react-three/drei";
 import Pocket from "./Pocket";
+import PoolBall from "./PoolBall";
+import { ballPositions, ballColors } from "../utils/ballPositions";
 
 const PoolTable = () => {
   return (
@@ -37,6 +39,9 @@ const PoolTable = () => {
       <Pocket position={[4.75, 0.5, 2.25]} />
       <Pocket position={[0, 0.5, -2.25]} />
       <Pocket position={[0, 0.5, 2.25]} />
+      {ballColors.map((color, index) => (
+        <PoolBall key={index} color={color} position={ballPositions[index]} />
+      ))}
     </>
   );
 };
