@@ -12,8 +12,9 @@ const App = () => {
       <Suspense fallback={null}>
         <PerspectiveCamera makeDefault position={[0, 5, 10]} />
         <ambientLight intensity={1} />
-        <pointLight position={[10, 10, 10]} />
-        <Ball position={[0, 2, 0]} />
+        {/* <pointLight position={[10, 10, 10]} intensity={20} /> */}
+        <spotLight position={[0, 10, 0]} intensity={30} />
+        <Ball position={[0, 1, 0]} />
         <PoolTable />
         <Background exrUrl={exrUrl} />
         <OrbitControls />
