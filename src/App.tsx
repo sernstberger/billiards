@@ -14,7 +14,7 @@ const App = () => {
         <ambientLight intensity={1} />
         {/* <pointLight position={[10, 10, 10]} intensity={20} /> */}
         <spotLight position={[0, 10, 0]} intensity={30} />
-        <Ball position={[0, 1, 0]} />
+        <Ball position={[3, 0.78, 0]} />
         <PoolTable />
         <Background exrUrl={exrUrl} />
         <OrbitControls />

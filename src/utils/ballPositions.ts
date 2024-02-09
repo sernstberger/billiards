@@ -20,19 +20,17 @@ export const ballColors = [
 const generateBallPositions = () => {
   const positions = [];
   const tableLength = 10; // Length of the pool table
-  // Correcting to position the rack one quarter length from the breaking end
-  const rackDepth = tableLength * 0.25; // Corrected to truly represent one quarter of the table length
-  const startY = 0.5 + 0.285; // Ensuring balls are on top of the table
-  const gap = 0.6; // Slightly increased gap to prevent scrunching
+  const startY = 0.5 + 0.285; // Balls rest on top of the table surface
+  const gap = 0.57; // Gap adjusted to match the ball diameter for barely touching
 
-  // Corrected to place the rack closer to the breaking end
-  const startX = rackDepth; // Now using rackDepth directly for mirrored position
-  const startZ = 0; // Centered along the Z-axis
+  // Adjust the starting X position based on table length to correctly position the rack
+  const startX = tableLength - 11.5; // Adjusted to start at the correct foot spot
+  const startZ = 0; // Centered along the Z-axis of the table
   let rowLength = 1;
   let currentZ = startZ;
 
   for (let row = 0; row < 5; row++) {
-    let currentX = startX + row * gap * 0.5; // Adjusting to move forward for each row
+    let currentX = startX - row * gap * 0.8; // Adjusting X to form each row of the triangle, stepping back
     for (let i = 0; i < rowLength; i++) {
       positions.push([
         currentX,
@@ -41,7 +39,7 @@ const generateBallPositions = () => {
       ]);
     }
     rowLength++;
-    currentZ = startZ; // Reset Z for each row
+    currentZ = startZ; // Z reset for each row not necessary in this linear adjustment, kept for clarity
   }
 
   return positions;
