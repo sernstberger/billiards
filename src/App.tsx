@@ -3,6 +3,8 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import Ball from "./components/Ball";
 import PoolTable from "./components/PoolTable";
+import Background from "./components/Background";
+const exrUrl = new URL("../public/country_club_4k.exr", import.meta.url).href;
 
 const App = () => {
   return (
@@ -13,6 +15,7 @@ const App = () => {
         <pointLight position={[10, 10, 10]} />
         <Ball position={[0, 2, 0]} />
         <PoolTable />
+        <Background exrUrl={exrUrl} />
         <OrbitControls />
       </Suspense>
     </Canvas>
